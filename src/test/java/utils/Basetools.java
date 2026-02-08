@@ -26,6 +26,9 @@ public class Basetools {
     public File screenshotFile;
     private WebDriverWait wait;
 
+    public Basetools(WebDriver driver) {
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(TIME));
+    }
 
     public void setWait(WebDriverWait wait) {
         this.wait = wait;

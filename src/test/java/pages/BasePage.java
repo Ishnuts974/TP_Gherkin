@@ -19,6 +19,5 @@ public class BasePage {
     public WebElement getButtonItem(String item){
         return driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-" + item + "']"));
     }
-
 }
 

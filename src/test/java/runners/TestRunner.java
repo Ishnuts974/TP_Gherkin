@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         plugin = { "pretty", "html:target/cucumber-reports.html","json:target/cucumber.json" },
         monochrome = true
-        ,tags= "@POEI2-699 ")
+        ,tags= "@ajoutPanier")
 public class TestRunner {
 
 
