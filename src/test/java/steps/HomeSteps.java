@@ -1,5 +1,6 @@
 package steps;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.HomePage;
@@ -14,12 +15,14 @@ import java.util.logging.LogManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.Basetools;
 
 
-
-public class HomeSteps {
+public class HomeSteps extends BaseSteps{
+    Basetools tool = new Basetools();
     WebDriver driver = DriverFactory.getDriver();
     HomePage homePage = new HomePage(driver);
+    HomeSteps homeSteps = new HomeSteps();
     public ConfigReader settings = new ConfigReader();
     //private static final Logger logger = LogManager.getLogger(BaseTest.class);
 
@@ -28,12 +31,18 @@ public class HomeSteps {
         String urlHomePage = settings.getProperty("urlHome");
 
     }
-    @And("elle est affiché")
-    public boolean isDisplayed() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return wait.until(ExpectedConditions.urlContains("inventory"));
+    @And("l'utilisateur est sur la page d'acceuil {string}")
+    public boolean isHomeDisplayed(String url) {
+        return homeSteps.isUrlDisplayed(url);
     }
 
+    @Given("l'utilisateur choisi d'ajouter le {string} à son panier")
+    public void getItem(String item){
+        WebElement itemChoosed = homePage.getButtonItem(item);
+        tool.waitAndClick(itemChoosed);
+    }
+
+    //public WebElement checkAddButton
 
 
 }

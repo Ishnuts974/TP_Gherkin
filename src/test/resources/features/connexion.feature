@@ -5,7 +5,7 @@ Feature: Authentification
     Given l'utilisateur est sur la page de connexion
     When il saisit le login "standard_user" et le mot de passe "secret_sauce"
     Then il est redirigé vers la page d'acceuil
-    And elle est affiché
+    And elle est affiche
 
 
   #@FailLogin
@@ -18,7 +18,7 @@ Feature: Authentification
     Given l'utilisateur est sur la page de connexion
     When il saisit le login "<username>" et le mot de passe "<password>"
     Then il est redirigé vers la page d'acceuil
-    And elle est affiché
+    And elle est affiche
     Examples:
       | username | password|
       |locked_out_user| secret_sauce|
