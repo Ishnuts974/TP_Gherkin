@@ -13,6 +13,7 @@ Feature: Authentification
     When il saisit le login "standard_user" et le mot de passe "wrong_password"
     Then un message d'erreur s'affiche
 
+  @ConnexionDifferentUsers
   Scenario Outline: Connexion réussi avec différents username
     Given l'utilisateur est sur la page de connexion
     When il saisit le login "<username>" et le mot de passe "<password>"
