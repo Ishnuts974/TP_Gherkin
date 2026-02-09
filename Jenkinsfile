@@ -5,7 +5,7 @@ pipeline {
        //sendResults
         parameters {
             string(name: 'SELENIUM_BROWSER', defaultValue :'CHROME')
-            string(name: 'PLAN DE TEST', defaultValue: 'POEI2-978')
+            string(name: 'PLAN_DE_TEST', defaultValue: 'POEI2-978')
         }
     //triggers {
         //cron(15 12 * 2 1-5)
@@ -39,7 +39,7 @@ stage('Import Features') {
         stage('Build & Test') {
             steps {
                 echo 'Execution des tests Cucumber via Maven...'
-                    bat 'mvn clean test -Dselenium.browser=%SELENIUM_BROWSER%'
+                    bat 'mvn clean test -Dselenium.browser=%SELENIUM_BROWSER% -DPLAN_DE_TEST=%PLAN_DE_TEST%'
 
             }
         }
