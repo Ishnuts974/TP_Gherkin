@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    40 11 * 2 1
+    //40 11 * 2 1
     stages {
 
         stage('Checkout') {
