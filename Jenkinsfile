@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+        parameters {
+            string(name: 'SELENIUM_BROWSER', defaultValue, 'CHROME')
+
+        }
     //triggers {
         //cron(15 12 * 2 1-5)
     //}
@@ -42,9 +47,6 @@ pipeline {
         }
     }
 
-    parameters {
-        string(name: 'SELENIUM_BROWSER', defaultValue, 'CHROME')
 
-}
 
 }
