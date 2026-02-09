@@ -112,6 +112,7 @@ public class ImportExportResultToXraySteps {
     }
     public static void downloadFeatureFiles(String testKeys) {
         try {
+            System.out.println("EXPORT JSON TEST FEATURE IMPORTE :");
             URL url = new URL("https://xray.cloud.getxray.app/api/v2/export/cucumber?keys=" + testKeys);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
