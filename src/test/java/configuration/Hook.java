@@ -30,11 +30,11 @@ public class Hook {
         DriverFactory.getDriver();
     }
 
-    @BeforeClass
-    public static void exportJson() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
-        downloadFeatureFiles("POEI2-890");
-        //unzipToFeatures()
-    }
+//    @BeforeClass
+//    public static void exportJsonFromXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
+//        downloadFeatureFiles("POEI2-890");
+//        //unzipToFeatures()
+//    }
 
     @After
     public void tearDown(Scenario scenario) throws IOException{
