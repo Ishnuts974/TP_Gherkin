@@ -5,7 +5,7 @@ pipeline {
        //sendResults
         parameters {
             string(name: 'SELENIUM_BROWSER', defaultValue :'CHROME')
-            string(name:)
+            string(name: 'PLAN DE TEST', defaultValue: 'POEI2-978')
         }
     //triggers {
         //cron(15 12 * 2 1-5)
