@@ -16,7 +16,7 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = System.getProperty("selenium.browser","chrome");
+            String browser = System.getProperty("selenium.browser","chrome").toLowerCase();
             switch (browser){
                 case "chrome":
                     // Ensuite, passe ces options à ton WebDriver
