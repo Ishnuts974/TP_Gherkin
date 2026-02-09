@@ -26,8 +26,9 @@ pipeline {
         }
     }
 
-    post {
 
+
+    post {
         success {
             echo 'Tests exécutés avec succès 🎉'
         }
@@ -35,7 +36,6 @@ pipeline {
         failure {
             echo 'Des tests ont échoué ❌'
         }
-        }
-        }
     }
+
 }
