@@ -16,7 +16,7 @@ public class DriverFactory {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            String browser = System.getProperty("selenium.browser");
+            String browser = System.getProperty("selenium.browser","chrome");
             switch (browser){
                 case "chrome":
                     // Ensuite, passe ces options à ton WebDriver
@@ -29,18 +29,16 @@ public class DriverFactory {
                     options.addArguments("--incognito");
                     options.setExperimentalOption("prefs", prefs);
                     driver = new ChromeDriver(options);
-                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                     break;
                 case "firefox":
                     driver = new FirefoxDriver();
-                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
                     break;
                 case "edge":
                     driver = new EdgeDriver();
-                    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-
+                default:
+                    throw new RuntimeException("Navigateur non supporté : " + browser);
             }
-
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         }
         return driver;
     }
