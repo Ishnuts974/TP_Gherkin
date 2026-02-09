@@ -19,6 +19,7 @@ import  steps.ImportExportResultToXraySteps;
 
 import static steps.ImportExportResultToXraySteps.downloadFeatureFiles;
 import static utils.ZipUtils.unzipToFeatures;
+import  static steps.ImportExportResultToXraySteps.getToken;
 
 
 public class Hook {
@@ -33,7 +34,8 @@ public class Hook {
 //    @BeforeClass
 //    public static void exportJsonFromXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
 //        downloadFeatureFiles("POEI2-890");
-//        //unzipToFeatures()
+//        unzipToFeatures();
+//        getToken();
 //    }
 
     @After

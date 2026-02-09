@@ -25,7 +25,7 @@ public class ImportExportResultToXraySteps {
 
     private static final String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJiNmNhZGQwNS1lMzQxLTNmMTctYjU1Zi00OTM0MTI4MWQ4MmEiLCJhY2NvdW50SWQiOiI3MTIwMjA6OWYwYzgwZGQtY2I4ZC00NTAwLTk4NzItYTQ5MmEzOWU3MTRkIiwiaXNYZWEiOmZhbHNlLCJpYXQiOjE3NzAyODI3OTQsImV4cCI6MTc3MDM2OTE5NCwiYXVkIjoiQzRCRTk4MUExNUMzNEU4OEI5NDVDMTY3RDNGNTA5MDYiLCJpc3MiOiJjb20ueHBhbmRpdC5wbHVnaW5zLnhyYXkiLCJzdWIiOiJDNEJFOTgxQTE1QzM0RTg4Qjk0NUMxNjdEM0Y1MDkwNiJ9.n572zOHkJQv_pth9fQrz8lVgcYPEm-ZsWOWUjRx8tZw";
 
-    public String getToken() throws IOException, NoSuchAlgorithmException, KeyManagementException {
+    public static String getToken() throws IOException, NoSuchAlgorithmException, KeyManagementException {
         String clientID = "C4BE981A15C34E88B945C167D3F50906";
         String secretClient = "7aca388c64b6023a5b250f2a36e0f741fdf789d510885c8cc6c5f39eaa4ef05c";
         //Token généré à l'aide de la méthode getToken

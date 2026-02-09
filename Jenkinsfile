@@ -42,4 +42,9 @@ pipeline {
         }
     }
 
+    parameters {
+    string(name: 'SELENIUM_BROWSER', defaultValue, 'CHROME')
+
+}
+
 }
