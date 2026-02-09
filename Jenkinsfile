@@ -35,5 +35,7 @@ pipeline {
         failure {
             echo 'Des tests ont échoué ❌'
         }
+        }
+        }
     }
 }
