@@ -16,6 +16,9 @@ pipeline {
                     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJiNmNhZGQwNS1lMzQxLTNmMTctYjU1Zi00OTM0MTI4MWQ4MmEiLCJhY2NvdW50SWQiOiI3MTIwMjA6OWYwYzgwZGQtY2I4ZC00NTAwLTk4NzItYTQ5MmEzOWU3MTRkIiwiaXNYZWEiOmZhbHNlLCJpYXQiOjE3NzAyODI3OTQsImV4cCI6MTc3MDM2OTE5NCwiYXVkIjoiQzRCRTk4MUExNUMzNEU4OEI5NDVDMTY3RDNGNTA5MDYiLCJpc3MiOiJjb20ueHBhbmRpdC5wbHVnaW5zLnhyYXkiLCJzdWIiOiJDNEJFOTgxQTE1QzM0RTg4Qjk0NUMxNjdEM0Y1MDkwNiJ9.n572zOHkJQv_pth9fQrz8lVgcYPEm-ZsWOWUjRx8tZw" ^
                     "https://xray.cloud.getxray.app/api/v1/export/cucumber?keys=POEI2-978" ^
                     -o features.zip
+                    Write-Host "=== DEBUG ZIP ==="
+                    dir features.zip
+                    (Get-Item features.zip).Length
                     powershell -Command "Expand-Archive -Force features.zip features2"
                     '''
                     }
