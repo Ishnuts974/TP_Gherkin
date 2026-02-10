@@ -35,7 +35,7 @@ public class Hook {
     public static void exportJsonFromXray() throws IOException, NoSuchAlgorithmException, KeyStoreException, InterruptedException, KeyManagementException {
         //downloadFeatureFiles("POEI2-890");
         //unzipToFeatures();
-        getToken();
+        //getToken();
     }
 
     @After
