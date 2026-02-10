@@ -28,6 +28,7 @@ public class DriverFactory {
             String browser = System.getProperty("selenium.browser","chrome").toLowerCase();
             switch (browser){
                 case "chrome":
+                    driver = new ChromeDriver();
                     logger.info("----------------");
                     logger.info("Browser: " + browser);
                     logger.info("-----------------");
