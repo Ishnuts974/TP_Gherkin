@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "configuration"
         },
         plugin = { "pretty", "html:target/cucumber-reports.html","json:target/cucumber.json" },
-        monochrome = true
-        ,tags= "@ConnexionDifferentUsers")
+        monochrome = true)
+        //,tags= "@ConnexionDifferentUsers")
 public class TestRunner extends Hook{
 
 
