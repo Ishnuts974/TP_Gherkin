@@ -6,8 +6,23 @@ pipeline {
         }
 
     stages {
+        stage('Get Xray Token') {
+                    steps {
+                        withCredentials([
+                            string(credentialsId: 'XRAY_CLIENT_ID', variable: 'CLIENT_ID'),
+                            string(credentialsId: 'XRAY_CLIENT_SECRET', variable: 'CLIENT_SECRET')
+                        ]) {
+                            bat """
+                            curl -X POST %XRAY_URL%/api/v2/authenticate ^
+                            -H "Content-Type: application/json" ^
+                            -d "{\\"client_id\\":\\"%CLIENT_ID%\\",\\"client_secret\\":\\"%CLIENT_SECRET%\\"}" ^
+                            -o token.txt
+                            """
+                        }
+                    }
+        }
 
-        stage('Import') {
+        stage('Export features from XRAY') {
             steps {
                 dir('C:/dev/jenkins/workspace/secondPipeline/src/test/resources/') {
 
@@ -41,7 +56,7 @@ pipeline {
 
             }
         }
-        stage('Export results to XRAY') {
+        stage('Import results to XRAY') {
     steps {
         echo 'Export des .json vers XRAY'
 
